@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      padding-bottom: 50px;
+      background: #202d36;
+    }
+    .header-right-side {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+    }
+    header {
+      background: #2d3643;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 70px;
+      height: 80px;
+    }
+    .input-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 40px;
+      background: #2d3643;
+      color: white;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .filter {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 30px;
+      background: #2d3643;
+      color: white;
+      border-radius: 10px;
+    }
+    .under-header {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 70px;
+    }
+    .section-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 70px;
+      margin-top: 40px;
+    }
+    body {
+      background: #1e2a33;
+      color: white;
+      padding: 40px;
+    }
+
+    .back-btn {
+      background: #2b3945;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .flag {
+      width: 520px;
+      height: 320px;
+      display: flex;
+    }
+
+    .flag div {
+      flex: 1;
+    }
+
+    .black {
+      background: black;
+    }
+    .yellow {
+      background: #f1d04b;
+    }
+    .red {
+      background: #e43d3d;
+    }
+
+    .info h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .details {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 30px;
+    }
+
+    .details p {
+      margin-bottom: 10px;
+      color: #dcdcdc;
+    }
+
+    .details span {
+      color: white;
+      font-weight: bold;
+    }
+
+    .borders {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .border-btn {
+      background: #2b3945;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    @media screen and (max-width: 486px) {
+      * {
+        align-content: stretch;
+      }
+      .section-1 {
+        flex-direction: column;
+        gap: 50px;
+        padding: auto;
+      }
+      .under-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+        padding: auto;
+      }
+      header {
+        padding: auto;
+        width: auto;
+      }
+      .hidden {
+        display: none !important;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <h1 style="color: white">Where in the world?</h1>
+      <div class="header-right-side">
+        <img src="Screenshot 2026-01-13 210246.png" alt="" />
+        <p style="margin: 0">Dark Mode</p>
+      </div>
+    </header>
+
+    <div style="width: 100%" class="flags-section">
+      <div class="under-header">
+        <div class="input-search">
+          <img src="search.png" alt="" />
+          <input
+            class="input-country"
+            style="background: none; color: white; border: none; padding: 5px"
+            placeholder="type sth"
+            type="text"
+          />
+        </div>
+        <div class="filter">
+          Filter by Region
+          <img src="expand.png" alt="" />
+        </div>
+      </div>
+      <section class="section-1">
+        <div
+          style="
+            width: 250px;
+            background: #2d3643;
+            border-radius: 10px;
+            overflow: hidden;
+          "
+        >
+          <img
+            style="width: 100%; object-fit: cover"
+            src="Bandeira da Alemanha – Wikipédia, a enciclopédia livre.jpg"
+            alt=""
+          />
+          <div style="padding: 10px 20px 10px 20px; color: white">
+            <h3>Germany</h3>
+            <p><b>Population:</b> 81,770,900</p>
+            <p><b>Region:</b> Europe</p>
+            <p><b>Capital:</b> Berlin</p>
+          </div>
+        </div>
+
+        <div
+          style="
+            width: 250px;
+            background: #2d3643;
+            border-radius: 10px;
+            overflow: hidden;
+          "
+        >
+          <img
+            style="width: 100%; object-fit: cover"
+            src="Iceland Large Flag.jpg"
+            alt=""
+          />
+          <div style="padding: 10px 20px 10px 20px; color: white">
+            <h3>Iceland</h3>
+            <p><b>Population:</b> 334,300</p>
+            <p><b>Region:</b> Europe</p>
+            <p><b>Capital:</b> Reykjavik</p>
+          </div>
+        </div>
+        <div
+          style="
+            width: 250px;
+            background: #2d3643;
+            border-radius: 10px;
+            overflow: hidden;
+          "
+        >
+          <img
+            style="width: 100%; object-fit: cover"
+            src="United States of America Large Flag.jpg"
+            alt=""
+          />
+          <div style="padding: 10px 20px 10px 20px; color: white">
+            <h3>United States of America</h3>
+            <p><b>Population:</b> 323,947,000</p>
+            <p><b>Region:</b> Americas</p>
+            <p><b>Capital:</b> Washington, D.C.</p>
+          </div>
+        </div>
+        <div
+          style="
+            width: 250px;
+            background: #2d3643;
+            border-radius: 10px;
+            overflow: hidden;
+          "
+        >
+          <img
+            style="width: 100%; object-fit: cover"
+            src="Brazil Flag.jpg"
+            alt=""
+          />
+          <div style="padding: 10px 20px 10px 20px; color: white">
+            <h3>Brazil</h3>
+            <p><b>Population:</b> 206,135,893</p>
+            <p><b>Region:</b> Americas</p>
+            <p><b>Capital:</b> Brasillia</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
