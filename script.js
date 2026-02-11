@@ -45,12 +45,12 @@ const getData = async () => {
       el.name.toLowerCase().includes(value),
     );
     flagsSection.style.display = "none";
-    let languages = country.languages.map((lang) => lang.name).join(", ");
+    let languages;
 
     body.insertAdjacentHTML(
       "beforeend",
       `
-      <div style="margin-top:50px"> <button class="back-btn">← Back</button> <div class="container"> <div class="flag"> <img src="${country.flags.svg}" alt="">  </div> <div class="info"> <h1>${country.name}</h1> <div class="details"> <div> <p><span>Native Name:</span> ${country.nativeName}</p> <p><span>Population:</span> ${country.population}</p> <p><span>Region:</span> ${country.region}</p> <p><span>Sub Region:</span> ${country.subregion}</p> <p><span>Capital:</span> ${country.capital}</p> </div> <div> <p><span>Top Level Domain:</span> ${country.topLevelDomain[0]}</p> <p><span>Currencies:</span> ${country.currencies[0].name}</p> <p><span>Languages:</span></p>${languages} </div> </div> <div class="borders">
+      <div style="margin-top:50px"> <button class="back-btn">← Back</button> <div class="container"> <div class="flag"> <img src="${country.flags.svg}" alt="">  </div> <div class="info"> <h1>${country.name}</h1> <div class="details"> <div> <p><span>Native Name:</span> ${country.nativeName}</p> <p><span>Population:</span> ${country.population}</p> <p><span>Region:</span> ${country.region}</p> <p><span>Sub Region:</span> ${country.subregion}</p> <p><span>Capital:</span> ${country.capital}</p> </div> <div> <p><span>Top Level Domain:</span> ${country.topLevelDomain[0]}</p> <p><span>Currencies:</span> ${country.currencies[0].name}</p> <p><span>Languages:</span>${country.languages.map((lang) => lang.name).join(",")}</p> </div> </div> <div class="borders">
 <strong>Border Countries:</strong>
 ${country.borders
   .map((el) => {
@@ -62,6 +62,13 @@ ${country.borders
     </div> </div> </div> </div>
     `,
     );
+    document.addEventListener("click", () => {
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("back-btn")) {
+          location.reload();
+        }
+      });
+    });
   });
 };
 
