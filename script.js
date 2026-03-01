@@ -2,6 +2,7 @@ const inputCountry = document.querySelector(".input-country");
 const mainSection = document.querySelector(".section-1");
 const body = document.body;
 const flagsSection = document.querySelector(".flags-section");
+const filter = document.querySelector('.filter')
 
 const getData = async () => {
   const response = await fetch("./data.json");
@@ -12,12 +13,12 @@ const getData = async () => {
   function render(country) {
     if (!country) return;
 
-    mainSection.innerHTML = "";
+  
     mainSection.insertAdjacentHTML(
       "beforeend",
       `
       <div class="one-country" style="width:250px;background:#2D3643;border-radius:10px;">
-        <img style="width:100%" src="${country.flags.svg}">
+        <img style="width:100%" src="${country.flags.png}">
         <div style="padding:10px;color:white;">
           <h3>${country.name}</h3>
           <p><b>Population:</b> ${country.population}</p>
@@ -28,8 +29,12 @@ const getData = async () => {
     `,
     );
   }
+  copyData.forEach(el =>{
+    render(el)
+  })
 
   inputCountry.addEventListener("input", () => {
+    mainSection.innerHTML ="";
     const value = inputCountry.value.toLowerCase();
 
     const country = copyData.find((e) => e.name.toLowerCase().includes(value));
@@ -70,6 +75,16 @@ ${country.borders
       });
     });
   });
+
+  filter.addEventListener('change', ()=>{
+    mainSection.innerHTML = "";
+    const regionFilter = data.filter(el => el.region.toLowerCase() === filter.value.toLowerCase())
+    console.log(regionFilter);
+    regionFilter.forEach(e =>{
+      render(e)
+    })
+    
+  })
 };
 
 getData();
