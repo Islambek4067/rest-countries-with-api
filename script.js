@@ -45,7 +45,7 @@ const getData = async () => {
       el.name.toLowerCase().includes(value),
     );
     flagsSection.style.display = "none";
-    let languages;
+
 
     body.insertAdjacentHTML(
       "beforeend",
